@@ -1,0 +1,9 @@
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+#loading {
+  display: none;
+  /* Hidden by default */
+}

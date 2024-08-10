@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"
+        type="image/x-icon">
+    <title>Weather Display</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center p-6">
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="fixed top-0 left-0 w-full h-full bg-white flex justify-center items-center p-4">
+        <div class="w-16 h-16 border-4 border-blue-500 border-t-gray-400 border-solid rounded-full animate-spin">
+        </div>
+    </div>
+    <header class="flex items-center gap-3 w-full p-2">
+        <input type="search" class="p-2 px-2 border rounded-md" placeholder="Search Location" id="location-search">
+        <button class="p-2 rounded-md bg-blue-500 text-white" id="getWeather">Search</button>
+        <button class="p-2 rounded-md bg-red-500 text-white" id="currentLocation">Current Locations</button>
+    </header>
+    </div>
+    <!-- Weather Container -->
+    <div class="grid  grid-cols-12 gap-3 w-full">
+        <div class="col-span-8 bg-white shadow-lg rounded-lg w-full p-6">
+            <!-- Location -->
+            <div class="text-center mb-6">
+                <h1 id="location" class="text-4xl font-bold text-gray-800">London</h1>
+                <p id="region" class="text-lg text-gray-500">City of London, Greater London</p>
+            </div>
+
+            <!-- Current Weather -->
+            <div id="currentWeather" class="flex flex-col items-center mb-6">
+                <img id="weatherIcon" src="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"
+                    alt="Weather Icon" class="weather-icon mb-2 w-24 h-24">
+                <p id="currentTemp" class="text-3xl font-bold text-gray-800">19.5°C</p>
+                <p id="currentCondition" class="text-lg text-gray-500">Partly Cloudy</p>
+            </div>
+
+            <!-- Details -->
+            <div id="details" class="grid grid-cols-2 gap-4 mb-6 text-gray-700">
+                <div>
+                    <p class="font-medium text-gray-800">Wind:</p>
+                    <p id="wind" class="text-gray-600">9.2 mph</p>
+                </div>
+                <div>
+                    <p class="font-medium text-gray-800">Humidity:</p>
+                    <p id="humidity" class="text-gray-600">59%</p>
+                </div>
+                <div>
+                    <p class="font-medium text-gray-800">Pressure:</p>
+                    <p id="pressure" class="text-gray-600">1020 mb</p>
+                </div>
+                <div>
+                    <p class="font-medium text-gray-800">Visibility:</p>
+                    <p id="visibility" class="text-gray-600">10 km</p>
+                </div>
+            </div>
+
+            <!-- Forecast -->
+            <div id="forecast">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Today's Forecast</h2>
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="font-medium text-gray-800">Max Temp:</p>
+                        <p id="maxTemp" class="text-gray-600">23.8°C</p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-800">Min Temp:</p>
+                        <p id="minTemp" class="text-gray-600">15.4°C</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <p class="font-medium text-gray-800 mr-2">Condition:</p>
+                        <img id="forecastIcon" src="" alt="Forecast Icon" class="weather-icon inline mb-1 w-12 h-12">
+                        <span id="forecastCondition" class="text-gray-600 ml-2">Partly Cloudy</span>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-800">Chance of Rain:</p>
+                        <p id="chanceOfRain" class="text-gray-600">0%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- forcast data -->
+        <div id="forcast-data" class="grid col-span-4 gap-3 grid-cols-1 w-full grid-rows-3">
+
+        </div>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
